@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "ponto-inteligente": {
@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ponto-inteligente"
+    }
+  },
+  "defaultProject": "ponto-inteligente",
+  "cli": {
+    "analytics": "9cbb3da3-580e-4edb-a664-444b7406c099"
+  }
 }
