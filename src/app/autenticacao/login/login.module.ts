@@ -12,6 +12,7 @@ import { HttpClientModule } from "@angular/common/http";
 import {MatIconModule} from '@angular/material/icon';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { LoginService } from './services';
 
 
 
@@ -32,6 +33,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatTooltipModule,
     MatSnackBarModule,
     RouterModule
+  ], 
+  providers: [
+    LoginService
   ]
 })
 export class LoginModule {}
