@@ -1,0 +1,29 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Log in</mat-card-title>
+    </mat-card-header>
+
+    <form [formGroup]="form" (ngSubmit)="logar()" class="example-form">
+      <mat-card-content>
+        <mat-form-field class="example-full-width">
+          <input formControlName="email" matInput type="email" placeholder="Login">
+        </mat-form-field>
+        <div *ngIf="form.controls['email'].errors.required && form.controls['email'].touched">
+          <label class="form-validation">E-mail é um campo obrigátorio</label>
+        </div>
+
+        <mat-form-field class="example-full-width">
+          <input formControlName="senha" matInput placeholder="Senha" type="password">
+        </mat-form-field>
+        <div class="validation-password" *ngIf="form.controls['senha'].touched">
+          <label *ngIf="form.controls['senha'].errors.required" class="form-validation">Senha é um campo obrigátorio</label>
+          <label *ngIf="form.controls['senha'].errors.minlength" class="form-validation">Insera sua senha com mais de 6 digitios.</label>
+        </div>
+      </mat-card-content>
+      <button type="submit" [disabled]="form.invalid" mat-stroked-button color="accent" class="btn-block">Log in</button>
+    </form>
+  </mat-card>
+
+</div>
