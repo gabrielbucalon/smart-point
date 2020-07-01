@@ -42,18 +42,11 @@ export class LoginComponent implements OnInit {
         const usuarioData = JSON.parse(atob(data['data']['token'].split('.')[1]));
         console.log(JSON.stringify(usuarioData));
 
-        if (usuarioData['role'] == 'ROLE_ADMIN') {
+        if (usuarioData['perfil'] === 'ROLE_ADMIN') {
           alert('Deve redirecionar para a página de admin');
         } else {
           alert('Deve redirecionar para a página de funcionario');
         }
-      }, err => {
-        console.log(JSON.stringify(err));
-        let msg: string = "Tente novamente em instantes";
-        if(err['status'] == 401){
-          msg = "E-mail/Senha inválido(s), tente novamente"
-        }
-        this.snackBar.open(msg, "Ok", {duration: 5000});
       });
   }
 

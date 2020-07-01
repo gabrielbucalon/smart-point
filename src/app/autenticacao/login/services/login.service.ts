@@ -8,12 +8,12 @@ import { Observable } from 'rxjs/internal/Observable';
 @Injectable()
 export class LoginService {
 
-  private readonly PATH: string = '/auth';
+  private readonly PATH: string = 'auth';
 
   constructor(private http: HttpClient) { }
 
   logar(login: Login): Observable<any> {
- 	return this.http.post(env.baseApiUrl + this.PATH, login);
+    return this.http.post(env.baseUrl + this.PATH, login);
   }
 
 }
